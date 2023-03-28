@@ -1,0 +1,23 @@
+<app-navbar></app-navbar> <br>
+
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6" *ngFor="let t of todos ">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">NO. {{ t.id }}</h5>
+                  <p class="card-text">{{ t.description }}</p>
+                  <p class="card-text">Target Date : {{ t.targetDate }} | Status : {{ t.status }}</p>
+                  <a (click)="deleteTodo(t.id)" class="btn btn-primary">Delete</a>&nbsp;
+                  <a (click)="todoDetails(t.id) " class="btn btn-primary">Details</a>&nbsp;
+                  <a (click)="updateTodo(t.id) " class="btn btn-primary">Update</a>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+    </div>
+
+    

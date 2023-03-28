@@ -1,0 +1,24 @@
+<app-navbar></app-navbar> <br>
+
+<div class="card text-center col-sm-6" style="margin-left: 20rem;">
+    <div class="card-header">
+        <h5 class="card-title" align="center">Todo Details</h5>
+    </div>
+    <div class="card-body">
+        <div>
+            <label><b>Description : </b></label> {{todo.description}}
+        </div>
+        <div>
+            <label><b>Target Date : </b></label> {{todo.targetDate}}
+        </div>
+        <div>
+            <label><b>Status : </b></label> {{todo.status}}
+        </div>
+        <hr>
+        <a (click)="goToList()" class="btn btn-info">Back To List</a> &nbsp;
+    </div>
+    <div class="card-footer text-muted">
+
+    </div>
+</div>
+<br>

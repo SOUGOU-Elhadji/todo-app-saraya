@@ -1,0 +1,43 @@
+<app-navbar></app-navbar> <br>
+<div class="container">
+   
+    <div class="row justify-content-md-center">
+        <div class="col col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <form class="row g-3" (ngSubmit)="saveTodo()">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Description</label>
+                            <input type="text" [(ngModel)]="todo.description" name="description" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Target Date</label>
+                            <input type="date" [(ngModel)]="todo.targetDate" name="targetDate" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Status</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" [(ngModel)]="todo.status" name="status" id="exampleRadios1" value="true" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                              True
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" [(ngModel)]="todo.status" name="status" id="exampleRadios2" value="false">
+                            <label class="form-check-label" for="exampleRadios2">
+                              False
+                            </label>
+                          </div>
+                        </div>
+
+                        <div class="col-auto ">
+                            <button type="submit " class="btn btn-primary mb-3 ">Save</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

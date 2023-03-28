@@ -1,0 +1,64 @@
+
+
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <img src="https://img.icons8.com/ios-glyphs/50/null/user--v1.png" />
+        </div>
+
+        <!-- Login Form -->
+        <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate
+            class="mt-4">
+            <input type="text" id="login" class="fadeIn second" placeholder="Username" name="username"
+                [(ngModel)]="form.username" minlength="3" maxlength="20" #username="ngModel" autofocus required>
+            <div class="alert-danger" *ngIf="username.errors && f.submitted">
+                <div *ngIf="username.errors.required">Username is required</div>
+                <div *ngIf="username.errors.minlength">
+                    Username must be at least 3 characters
+                </div>
+                <div *ngIf="username.errors.maxlength">
+                    Username must be at most 20 characters
+                </div>
+            </div>
+            <input type="text" class="fadeIn third" placeholder="First Name" firstName name="firstName"
+                [(ngModel)]="form.firstName" #firstName="ngModel" id="firstName" autofocus required>
+            <div class="alert-danger" *ngIf="firstName.errors && f.submitted">
+                <div *ngIf="firstName.errors.required">firstName is required</div>
+                <div *ngIf="firstName.errors.minlength">
+                    firstName must be at least 3 characters
+                </div>
+            </div>
+            <input type="text" class="fadeIn third" placeholder="Last Name" lastName name="lastName"
+                [(ngModel)]="form.lastName" #lastName="ngModel" id="lastName" autofocus required>
+            <div class="alert-danger" *ngIf="lastName.errors && f.submitted">
+                <div *ngIf="lastName.errors.required">lastName is required</div>
+                <div *ngIf="lastName.errors.minlength">
+                    lastName must be at least 3 characters
+                </div>
+            </div>
+            <!-- <input type="text" id="password" class="fadeIn third" name="login" placeholder="password"> -->
+
+            <input class="fadeIn third" type="hide ? 'password' : 'text'" type="password" name="password" [(ngModel)]="form.password"
+                minlength="6" #password="ngModel" placeholder="Password" id="password" required>
+
+            <div class="alert-danger" *ngIf="password.errors && f.submitted">
+                <div *ngIf="password.errors.required">Password is required</div>
+                <div *ngIf="password.errors.minlength">
+                    Password must be at least 6 characters
+                </div>
+            </div>
+
+            <input type="submit" class="fadeIn fourth" value="Sign Up">
+        </form>
+
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+            <a class="underlineHover" routerLink="/login">Login</a>
+        </div>
+
+    </div>
+</div>
